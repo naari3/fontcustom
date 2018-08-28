@@ -12,7 +12,7 @@ To assemble your own glyph font take a look at existing glyphs at [The NounProje
 How to run?
 -----------
 
-Default `docker run drichner/fontcustom` shows fontcustom help information.
+Default `docker run naari3/fontcustom` shows fontcustom help information.
 
 I recommend using the script below because the local file location needs to be mapped to specific mounts in the container.
 
@@ -22,7 +22,7 @@ Helper script to run it in an environment like [boot2docker][2] or in [coreos][4
 
 	#!/bin/bash
 	
-	docker run -v ${PWD}:/project  drichner/fontcustom $@
+	docker run -v ${PWD}:/project  naari3/fontcustom $@
 
 if you are in your project directory you can execute ```./fontcustom compile -n iconname -h ./vectors ```
 
