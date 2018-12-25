@@ -12,10 +12,9 @@ RUN git clone --recursive https://github.com/google/woff2.git /tmp/woff2 \
   && rm -rf /tmp/woff2
 
 # build sfnt2woff
-COPY lib/woff-code-latest.zip /tmp/woff-code-latest.zip
-RUN cd /tmp && unzip woff-code-latest.zip -d sfnt2woff \
-  && cd sfnt2woff \
-  && make && mv sfnt2woff /usr/local/bin/ \
+RUN git clone https://github.com/bramstein/sfnt2woff-zopfli.git /tmp/sfnt2woff-zopfli \
+  && cd /tmp/sfnt2woff-zopfli \
+  && make && mv sfnt2woff-zopfli /usr/local/bin/sfnt2woff \
   && rm -rf /tmp/sfnt2woff
 
 FROM debian:stretch-slim
